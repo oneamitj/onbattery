@@ -130,7 +130,7 @@ def reset(event):#Stop the running thread
 
 def destroy(event):#for exit the app (not complete)
     reset(event)
-    #top.Destroy()
+    top.destroy()
 
 def status(val):#takes status of power
     print val
