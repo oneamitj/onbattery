@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# © iVoIP
 # Get power status of the system using ctypes to call GetSystemPowerStatus
 # status.ACLineStatus::   0 = not charging, 1 = charging
 
@@ -45,9 +44,6 @@ def main():
 
     label2 = Label( top,bg="grey", text="Not Started!!!")
     label2.place(bordermode=OUTSIDE,x=5,y=150)
-
-    label3 = Label( top,bg="grey", text="© iVoIP")
-    label3.place(bordermode=OUTSIDE,x=115,y=150)
 
     #entry box
     entry1 = Entry(top,fg="black", width=10)
@@ -133,7 +129,7 @@ def destroy(event):#for exit the app (not complete)
     top.destroy()
 
 def status(val):#takes status of power
-    print val
+    #print val
     check_status()
     global count
     while(1):#loop till power on battery
@@ -172,7 +168,7 @@ def check_battery():#check power status, return 1 if on power and 0 if on batter
     status = SYSTEM_POWER_STATUS()
     if not GetSystemPowerStatus(ctypes.pointer(status)):
         raise ctypes.WinError()
-    print 'ACLineStatus', status.ACLineStatus
+    #print 'ACLineStatus', status.ACLineStatus
     return status.ACLineStatus
 
 if __name__ == "__main__": main()
